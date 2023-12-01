@@ -4,12 +4,15 @@ import mongoose from "mongoose";
 import cors from 'cors';
 
 import schema from './schema/schema.js';
+import { readFileSync } from "fs";
 
 const app = express();
 
 app.use(cors());
 
-mongoose.connect('mongodb+srv://tsvetta:<pass>@cluster0.ie3yjvk.mongodb.net/graphql-express-example')
+const mongoPass = readFileSync('./mongo-pass')
+
+mongoose.connect(`mongodb+srv://tsvetta:${mongoPass}@cluster0.ie3yjvk.mongodb.net/graphql-express-example`)
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
 })
