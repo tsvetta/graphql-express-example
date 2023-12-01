@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 
-mongoose.connect('mongodb+srv://tsvetta:0U7Rwidmo0lrzjxe@cluster0.ie3yjvk.mongodb.net/graphql-express-example')
+mongoose.connect('mongodb+srv://tsvetta:<pass>@cluster0.ie3yjvk.mongodb.net/graphql-express-example')
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
 })
