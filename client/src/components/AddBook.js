@@ -9,8 +9,8 @@ const AuthorsSelect = ({ error, loading, data, value, onChange }) => {
             {loading && <option disabled>Data is loading...</option>}
             {error && <option disabled>Error: {error.message}</option>}
 
-            {data && data.authors && <option value=''>Select author</option>}
-            {data && data.authors && data.authors.map((author) => {
+            {data?.authors && <option value=''>Select author</option>}
+            {data?.authors && data.authors.map((author) => {
                 return (<option key={author.id} value={author.id}>{author.name}</option>)
             })}
         </select>
